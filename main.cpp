@@ -84,7 +84,7 @@ int main()//fungsi utama
                 cin.clear();// Menghapus status kesalahan input
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');// Membersihkan buffer / input yang telah dimasukkan sebelumnya
                 cout << messageErrorInputBilangan;//menampilkan text Input harus berupa bilangan. Silahkan coba kembali yang diambil dari variable messageErrorInputBilangan
-                cout << endl;
+                cout << endl;//menampilkan/mencetak/menambahkan baris baru
             } else {
                 kalkulasi.setBilangan2(bilangan2);//mengassign/set nilai variable bilangan2 ke method setBilangan2 yang ada di object kalkulasi
                 break;//mengeluarkan/menghentikan dari proses loop
@@ -123,13 +123,15 @@ int main()//fungsi utama
             pilihanOperator = " * ";//mengassign/set variable pilihanOperator dengan value *
         }
 
-        //menampilkan text Pilihan Anda adalah dan juga nilai dari variable pilihan yang sebelumnya diinput dan juga text operator yang sudah diberikan ke variable pilihanText
+        //menampilkan text Pilihan Anda adalah
+        //juga menampilkan nilai dari variable pilihan yang sebelumnya diinput
+        //dan juga menampilkan text operator yang sudah diberikan value ke variable pilihanText
         cout << "Pilihan Anda adalah " << pilihan << pilihanText << endl;
         cout << endl;//menampilkan/mencetak/menambahkan baris baru
 
         // proses pengecekan pilihan yang diinputkan apakah 1,2, atau 3
         // atau lebih dari sama dengan 1 dan juga kurang dari sama dengan 3
-        if(pilihan == 1 || pilihan == 2 || pilihan == 3) {
+        if(pilihan >= 1 && pilihan <= 3) {
             cout << "Proses perhitungan dari " << kalkulasi.getBilangan1() << pilihanOperator << kalkulasi.getBilangan2();//menampilkan text Proses perhitungan dari bilangan1 operator nya dan bilangan2
             cout << endl;//menampilkan/mencetak/menambahkan baris baru
             cout << "Hasilnya adalah: " << kalkulasi.operasiMatematika(pilihan) << endl;//menghitung 2 bilangan yang diinputkan berdasarkan operasi matematika yang dipilih
